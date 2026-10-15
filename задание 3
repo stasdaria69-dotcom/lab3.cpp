@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cmath> 
+#include <clocale>
+using namespace std;
+int main() 
+{
+    setlocale(LC_ALL, "Rus");
+int temperature;
+ {
+    cout << "Введите температуру отопления (от 15 до 30): ";
+    cin >> temperature;
+    } 
+while (temperature < 15 || temperature > 30);
+int deviation = temperature - 22;
+cout << "Введена корректная температура: " << temperature << endl;
+cout << "Отклонение от рекомендуемых 22 градусов: " << deviation << " (по модулю: " << abs(deviation) << ")" << endl;
+return 0;
+}
