@@ -1,0 +1,26 @@
+ #include <iostream>
+using namespace std;
+int main() {
+    setlocale(LC_ALL, "Rus");
+    int water;
+    int total_water = 0;
+    int days_above_20 = 0;
+    cout << "Вводите расход воды за день (для выхода введите -1):" << endl;
+    while (true) {
+        cin >> water;
+        if (water == -1) {
+            break;
+        }
+        if (water < 0) {
+            cout << "Ошибка! Отрицательное значение пропущено." << endl;
+            continue;
+        }
+        total_water += water;
+        if (water > 20) {
+            days_above_20++;
+        }
+    }
+    cout << "Общий расход воды: " << total_water << endl;
+    cout << "Число дней с расходом выше 20: " << days_above_20 << endl;
+    return 0;
+}
